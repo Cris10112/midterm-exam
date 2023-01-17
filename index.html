@@ -19,8 +19,55 @@
    <h2>Explanation</h2>
  <h2>Images</h2>
    <h2>Code</h2>
-   <p></p>
+   <p>input.onSwitchMoved(SwitchDirection.Right, function () {
+   threshold = 700
+})
+input.onSwitchMoved(SwitchDirection.Left, function () {
+   threshold = 800
+})
+input.buttonA.onEvent(ButtonEvent.Click, function () {
+   light.setBrightness(100)
+   light.showRing(
+   `white white white white white white white white white white`
+   )
+})
+input.buttonsAB.onEvent(ButtonEvent.Click, function () {
+   threshold = 800
+})
+input.buttonB.onEvent(ButtonEvent.Click, function () {
+   light.clear()
+})
+let threshold = 0
+threshold = 700
+forever(function () {
+   if (crickit.touch1.touchRead() > threshold) {
+       light.setBrightness(70)
+       light.showRing(
+       `white white white white white white white white white white`
+       )
+   }
+   if (crickit.touch2.touchRead() > threshold) {
+       light.setBrightness(50)
+       light.showRing(
+       `white white white white white white white white white white`
+       )
+   }
+   if (crickit.touch3.touchRead() > threshold) {
+       light.setBrightness(30)
+       light.showRing(
+       `white white white white white white white white white white`
+       )
+   }
+   if (crickit.touch4.touchRead() > threshold) {
+       light.setBrightness(5)
+       light.showRing(
+       `white white white white white white white white white white`
+       )
+   }
+})
+</p>
    <h2>Video</h2>
+    <p> </p>
    <h2>Behind the scenes</h2>
   </body>
 </html>
